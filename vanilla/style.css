@@ -1,0 +1,124 @@
+:root {
+    --primary-color: #F34C4F;
+    --secondary-color: #2b2b2b69;
+    --primary-font-color: white;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--primary-color);
+}
+
+nav {
+   text-align: end;
+   width: 90vw;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    padding-top: 1rem;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+h1,
+h2,
+p,
+a {
+    color: var(--primary-font-color);
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-default {
+    width: 10rem;
+    min-width: 5rem;
+    max-width: 10rem;
+    
+    border-radius: 5px;
+    border-color: white;
+    padding: 0.5rem;
+
+    box-shadow: -2px 6px 16px -2px rgba(39, 39, 39, 0.593);
+    -webkit-box-shadow: -2px 6px 16px -2px rgba(39, 39, 39, 0.593);
+    -moz-box-shadow: -2px 6px 16px -2px rgba(39, 39, 39, 0.593);
+}
+
+.divider {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-width: thin;
+    width: 85vw;
+    margin: 2rem auto;
+}
+
+#title-timer-container {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+#title-timer-container h1 {
+    text-transform: uppercase !important;
+    text-shadow: -1px 3px 2px rgba(0,0,0,0.6);
+}
+
+#card {
+    width: 30rem;
+    margin: auto;
+    border-radius: 15px;
+    padding-bottom: 3rem;
+
+    background-color: var(--secondary-color);
+    color: var(--primary-font-color);
+    box-shadow: -2px 6px 16px -2px rgba(39, 39, 39, 0.693);
+    -webkit-box-shadow: -2px 6px 16px -2px rgba(39, 39, 39, 0.693);
+    -moz-box-shadow: -2px 6px 16px -2px rgba(39, 39, 39, 0.693);
+}
+
+#card-timer {
+    display: flex;
+    place-content: center;
+    padding: 1rem;
+}
+
+#timer {
+    font-size: 8rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+#increase {
+    height: 4rem;
+    align-self: end;
+    padding-left: 1rem;
+}
+
+#decrease {
+    height: 4rem;
+    align-self: end;
+    padding-right: 1rem;
+}
+
+a:not(:disabled),
+a:not(:disabled),
+.btn-default:not(:disabled) {
+    cursor: pointer;
+}
+
+#card-buttons {
+    display: flex;
+    place-content: center;
+    gap: 1rem;
+}

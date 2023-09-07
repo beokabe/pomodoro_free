@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Free</title>
+</head>
+
+<body>
+    <audio id="audio-alarm" src="./assets/audios/alarm-clock-01.mp3"></audio>
+    <audio id="audio-ticking" src="./assets/audios/clock-ticking-2.mp3"></audio>
+    <audio id="audio-crank" src="./assets/audios/crank-2.mp3"></audio>
+
+    <nav>
+        <ul>
+            <li>
+                <a id="no-sound" class="btn-nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M3 9h4l5-5v16l-5-5H3V9m13.59 3L14 9.41L15.41 8L18 10.59L20.59 8L22 9.41L19.41 12L22 14.59L20.59 16L18 13.41L15.41 16L14 14.59L16.59 12Z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a id="graph" class="btn-nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M9 17H7v-7h2v7m4 0h-2V7h2v10m4 0h-2v-4h2v4Z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <div id="title-timer-container">
+            <h1>Pomodoro Free</h1>
+        </div>
+        <div id="timer-container" class="container">
+            <div id="card">
+                <div id="card-timer">
+                    <a id="decrease"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M13.72 21.84c-.56.1-1.13.16-1.72.16c-5.5 0-10-4.5-10-10S6.5 2 12 2s10 4.5 10 10c0 .59-.06 1.16-.16 1.72A5.9 5.9 0 0 0 19 13c-1.26 0-2.43.39-3.4 1.06l-3.1-1.86V7H11v6l3.43 2.11A5.963 5.963 0 0 0 13 19c0 1.03.26 2 .72 2.84M15 18v2h8v-2h-8Z" />
+                        </svg></a>
+
+                    <span id="timer"></span>
+
+                    <a id="increase">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M13.72 21.84c-.56.1-1.13.16-1.72.16c-5.5 0-10-4.5-10-10S6.5 2 12 2s10 4.5 10 10c0 .59-.06 1.16-.16 1.72A5.9 5.9 0 0 0 19 13c-1.26 0-2.43.39-3.4 1.06l-3.1-1.86V7H11v6l3.43 2.11A5.963 5.963 0 0 0 13 19c0 1.03.26 2 .72 2.84M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z" />
+                        </svg>
+                    </a>
+                </div>
+                <div id="card-buttons">
+                    <button id="reset" class="btn-default">Reset</button>
+                    <button id="start" class="btn-default">Start</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+    <section>
+        <h2>Tasks</h2>
+        <div class="tasks">
+            <button id="delegateTask" class="btn-default">Add Task</button>
+            <li></li>
+        </div>
+    </section>
+</body>
+
+</html>
+<script src="index.js"></script>
