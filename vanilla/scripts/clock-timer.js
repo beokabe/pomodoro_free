@@ -1,4 +1,4 @@
-const DEFAULT_MINUTE = 5;
+const DEFAULT_MINUTE = 25;
 const DEFAULT_SECONDS = 0;
 
 let minutes = DEFAULT_MINUTE;
@@ -69,41 +69,52 @@ startButton.addEventListener("click", () => {
 });
 
 document.getElementById("no-sound").addEventListener("click", () => {
-  if (!allSoundsMuted) muteAllAudios();
-  else unmuteAllAudios();
+  if (!allSoundsMuted) muteAllAudios()
+  else unmuteAllAudios()
 
-  allSoundsMuted = !allSoundsMuted;
+  allSoundsMuted = !allSoundsMuted
 });
 
 document.getElementById("reset").addEventListener("click", () => {
-  resetTimer();
+  playAudioReset()
+  resetTimer()
 });
 
 function startButtonAction() {
-  seconds = seconds === 0 ? 60 : seconds;
-  minutes = seconds === 60 ? --minutes : minutes;
+  
+  document.getElementById('audio-start').play()
 
-  let remainingTime = minutes * 60 + seconds;
+  seconds = seconds === 0 ? 60 : seconds
+  minutes = seconds === 60 ? --minutes : minutes
 
-  if (remainingTime === 0) remainingTime = seconds;
+  let remainingTime = minutes * 60 + seconds
 
-  togglePlayAudioClockTicking();
+  if (remainingTime === 0) remainingTime = seconds
+
+  togglePlayAudioClockTicking()
 
   timerInterval = setInterval(() => {
+    if (remainingTime <= 11) {
+      document.getElementById("audio-ticking").pause()
+      playAudioCountdown()
+    }
+
     if (remainingTime > 0 && start) {
       setTimerInterval();
       remainingTime--;
       updateTimer();
     } else {
       resetTimer();
-      playAudioClockAlarm();
+      playAudioClockFinish();
     }
   }, 1000);
 }
 
 function stopButtonAction() {
-  togglePlayAudioClockTicking();
-  clearInterval(timerInterval);
+  togglePlayAudioClockTicking()
+  pauseAudioCountdown()
+  playAudioStop()
+  clearInterval(timerInterval)
 }
 
 function setTimerInterval() {
@@ -121,6 +132,7 @@ function clearTimer() {
   start = false;
   toggleDisableButtonsOfIncreaseAndDecreaseTimer();
   togglePlayAudioClockTicking();
+  pauseAudioCountdown();
   changeNameButtonStart("Start");
   updateTimer();
 }
@@ -160,12 +172,28 @@ function toggleDisableButtonsOfIncreaseAndDecreaseTimer() {
   decreaseButton.disabled = !decreaseButton.disabled
 }
 
-function playAudioClockAlarm() {
-  document.getElementById("audio-alarm").play()
+function playAudioClockFinish() {
+  document.getElementById("audio-finish").play()
 }
 
 function playAudioClockCrank() {
   document.getElementById("audio-crank").play()
+}
+
+function playAudioReset() {
+  document.getElementById("audio-reset").play()
+}
+
+function playAudioCountdown() {
+  document.getElementById("audio-countdown").play()
+}
+
+function pauseAudioCountdown() {
+  document.getElementById("audio-countdown").pause()
+}
+
+function playAudioStop() {
+  document.getElementById("audio-stop").play()
 }
 
 function togglePlayAudioClockTicking() {
@@ -184,13 +212,15 @@ function setVolumeAudio(id, volume) {
 }
 
 function unmuteAllAudios() {
-  setVolumeAudio("audio-alarm", 0.4)
-  setVolumeAudio("audio-crank", 1)
+  setVolumeAudio("audio-finish", 0.8)
+  setVolumeAudio("audio-crank", 0.3)
   setVolumeAudio("audio-ticking", 0.2)
+  setVolumeAudio("audio-start", 0.8)
+  setVolumeAudio("audio-stop", 0.8)
+  setVolumeAudio("audio-reset", 1)
 }
 
 function muteAllAudios() {
-  setVolumeAudio("audio-alarm", 0)
   setVolumeAudio("audio-crank", 0)
   setVolumeAudio("audio-ticking", 0)
 }
