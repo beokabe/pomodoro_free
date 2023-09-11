@@ -1,4 +1,8 @@
-(function () {
+(function () { 
+  const MIN_MINUTE = 5
+  const MAX_MINUTE = 60
+  const INCREASE_DEFAULT = 5
+
   const DEFAULT_MINUTE = 0
   const DEFAULT_SECONDS = 5
 
@@ -29,8 +33,8 @@
       resetTimer()
     }
 
-    if (minutes > 5) {
-      minutes -= 5
+    if (minutes > MIN_MINUTE) {
+      minutes -= INCREASE_DEFAULT
       updateTimer()
       playAudioClockCrank()
     }
@@ -41,8 +45,8 @@
       resetTimer()
     }
 
-    if (minutes < 120) {
-      minutes += 5
+    if (minutes < MAX_MINUTE) {
+      minutes += INCREASE_DEFAULT
       updateTimer()
       playAudioClockCrank()
     }

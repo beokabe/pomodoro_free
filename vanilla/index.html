@@ -22,7 +22,7 @@
     <nav>
         <ul>
             <li>
-                <a id="no-sound" class="btn-nav">
+                <a id="no-sound" class="btn-nav" title="Disable the annoying audios">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M3 9h4l5-5v16l-5-5H3V9m13.59 3L14 9.41L15.41 8L18 10.59L20.59 8L22 9.41L19.41 12L22 14.59L20.59 16L18 13.41L15.41 16L14 14.59L16.59 12Z" />
@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li>
-                <a id="with-sound" class="btn-nav" style="display: none;">
+                <a id="with-sound" class="btn-nav" style="display: none;" title="Enable the annoying audios">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4l-5 4m9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4Z" />
@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a id="graph" class="btn-nav">
+                <a id="graph" class="btn-nav" title="Look your statistics">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M9 17H7v-7h2v7m4 0h-2V7h2v10m4 0h-2v-4h2v4Z" />
@@ -78,14 +78,47 @@
     <div class="divider"></div>
     <section>
         <div id="tasks">
-            <div class="header">
-                <h2 id="title-tasks">Tasks Listview</h2>
-                <div class="tasks-options">:</div>
+            <div class="tasks-header">
+                <div class="tasks-title">
+                    <h2 id="title-tasks">Tasklist</h2>
+                </div>
+                <div class="tasks-action">
+                    <a>Action
+                        <svg class="arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42Z" />
+                        </svg>
+                        <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41Z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <div class="footer">
-                <button id="delegateTask" class="btn-default">New Task</button>
+            <div class="tasks-list">
+                <button id="delegate-task" class="btn-default">Add a new assignment for you</button>
+                <ul>
+                    <li>
+                        <div class="task-card">
+                            <span class="title">Teste</span>
+                            <span class="duration">10:00</span>
+                        </div>
+                        <a>X</a>
+                    </li>
+                    <li>
+                        <div class="task-card">
+                            <span class="title">Teste</span>
+                            <span class="duration">10:00</span>
+                        </div>
+                        <a>X</a>
+                    </li>
+                    <li>
+                        <div class="task-card">
+                            <span class="title">Teste</span>
+                            <span class="duration">10:00</span>
+                        </div>
+                        <a>X</a>
+                    </li>
+                </ul>
             </div>
-            <li></li>
         </div>
     </section>
     <footer>

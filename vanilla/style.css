@@ -118,8 +118,8 @@ button {
 }
 
 .modal-content {
-    width: 33%;
-    height: 40%;
+    width: 33vw;
+    height: 40vh;
     position: absolute;
     top: 30%;
     right: 33%;
@@ -160,9 +160,58 @@ button {
     font-size: 2rem;
 }
 
-#tasks .header {
-    display: inline-flex;
+.tasks-header  {
+    display: flex;
+    align-items: center;
+    place-content: space-evenly;
     color: var(--primary-font-color);
+}
+
+.tasks-action {
+    background-color: #34343455;
+}
+
+.tasks-action > a {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.tasks-action > a > svg {
+    position: absolute;
+    top: -1px;
+}
+
+.tasks-action > a > .arrow-down {
+    display: none;
+}
+
+.tasks-list {
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.tasks-list > ul {
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 5px;    
+}
+
+.tasks-list .task-card {
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--primary-font-color);
+    background-color: var(--secondary-color);
+    margin-top: 1rem;
+    box-shadow: -2px 6px 16px -2px rgba(1, 1, 1, 0.693);
+    -webkit-box-shadow: -2px 6px 16px -2px rgba(1, 1, 1, 0.693);
+    -moz-box-shadow: -2px 6px 16px -2px rgba(1, 1, 1, 0.693);
+}
+
+#delegate-task {
+    width: 50%;
+    max-width: 50%;
 }
 
 #title-timer-container h1 {
@@ -223,3 +272,4 @@ a:not(:disabled),
     place-content: center;
     gap: 1rem;
 }
+
