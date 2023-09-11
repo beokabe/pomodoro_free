@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Free</title>
@@ -26,6 +26,14 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M3 9h4l5-5v16l-5-5H3V9m13.59 3L14 9.41L15.41 8L18 10.59L20.59 8L22 9.41L19.41 12L22 14.59L20.59 16L18 13.41L15.41 16L14 14.59L16.59 12Z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a id="with-sound" class="btn-nav" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4l-5 4m9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4Z" />
                     </svg>
                 </a>
             </li>
@@ -69,12 +77,53 @@
     </section>
     <div class="divider"></div>
     <section>
-        <h2>Tasks</h2>
-        <div class="tasks">
-            <button id="delegateTask" class="btn-default">Add Task</button>
+        <div id="tasks">
+            <div class="header">
+                <h2 id="title-tasks">Tasks Listview</h2>
+                <div class="tasks-options">:</div>
+            </div>
+            <div class="footer">
+                <button id="delegateTask" class="btn-default">New Task</button>
+            </div>
             <li></li>
         </div>
     </section>
+    <footer>
+        <div id="author"></div>
+    </footer>
+    <div class="modal" id="modal-finish-timer">
+        <div class="modal-content">
+            <div class="modal-options">
+                <a id="close-modal-finish-timer" class="btn-nav btn-close-modal"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6L6.4 19Z" />
+                    </svg></a>
+            </div>
+            <div class="modal-section">
+                <p>You have finished a task!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-default btn-confirm">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-add-task" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-options">
+                <a id="close-modal-finish-timer" class="btn-nav btn-close-modal"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6L6.4 19Z" />
+                    </svg></a>
+            </div>
+            <div class="modal-section"></div>
+            <div class="modal-footer">
+                <button class="btn-default btn-confirm">OK</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
