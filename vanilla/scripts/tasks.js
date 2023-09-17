@@ -14,8 +14,8 @@
     let tasks = []
     let paginacao = new Paginacao(1, tasks.length, 1)
     
-    document.getElementById("delegateTask").addEventListener("click", () => {
-        
+    document.getElementById("delegate-task").addEventListener("click", () => {
+        alert("Available only in framework version!")
     })
 
     function init() {
